@@ -1,0 +1,37 @@
+{
+  "name": "upl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UPL",
+  "author": "Nick Winans",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "gatsby": "^4.7.1",
+    "gatsby-plugin-image": "^2.7.0",
+    "gatsby-plugin-manifest": "^4.7.0",
+    "gatsby-plugin-mdx": "^3.7.0",
+    "gatsby-plugin-netlify-cms": "^6.7.0",
+    "gatsby-plugin-react-helmet": "^5.7.0",
+    "gatsby-plugin-sass": "^5.7.0",
+    "gatsby-plugin-sharp": "^4.7.0",
+    "gatsby-plugin-sitemap": "^5.7.0",
+    "gatsby-source-filesystem": "^4.7.0",
+    "gatsby-transformer-sharp": "^4.7.0",
+    "netlify-cms-app": "^2.15.66",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.49.7"
+  }
+}
