@@ -10,6 +10,7 @@ const Index = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       Hi
       <Link to={"/blog"}>Blog</Link>
+      <Link to={"/hours"}>Hours</Link>
     </Layout>
   );
 };
