@@ -4,11 +4,16 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Giscus } from "@giscus/react";
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.mdx
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next, author } = data
+  const { previous, next, authorData, authorImage } = data;
+  console.log(authorData);
+  const author = authorData.childPeopleYaml;
+  const image = getImage(authorImage);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -28,6 +33,7 @@ const BlogPostTemplate = ({ data, location }) => {
         <MDXRenderer>{post.body}</MDXRenderer>
         <hr />
         <footer>
+          <GatsbyImage image={image} alt={author.name} />
           {author.name}
         </footer>
       </article>
@@ -57,10 +63,21 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
+      <Giscus
+        repo="UW-UPL/website"
+        repoId="R_kgDOG0Av5A"
+        category="Comments"
+        categoryId="DIC_kwDOG0Av5M4COKw-"
+        mapping="pathname"
+        reactionsEnabled="1"
+        emitMetadata="0"
+        inputPosition="bottom"
+        theme="light"
+        lang="en"
+      />
     </Layout>
-  )
+  );
 }
-
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
@@ -102,10 +119,21 @@ export const pageQuery = graphql`
         title
       }
     }
-    author: peopleYaml(id: { eq: $authorId }) {
-      name
-      url
-      coord
+    authorData: file(name: { eq: $authorId }, extension: { eq: "yml" }) {
+      childPeopleYaml {
+        name
+        url
+        coord
+      }
+    }
+    authorImage: file(name: { eq: $authorId }, extension: { ne: "yml" }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 200
+          placeholder: BLURRED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
     }
   }
-`
+`;

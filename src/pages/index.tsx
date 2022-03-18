@@ -11,6 +11,7 @@ const Index = ({ data, location }) => {
       Hi
       <Link to={"/blog"}>Blog</Link>
       <Link to={"/hours"}>Hours</Link>
+      <Link to={"/coords"}>Coords</Link>
     </Layout>
   );
 };

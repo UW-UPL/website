@@ -19,8 +19,6 @@ const HoursIndex = ({ data, location }) => {
     }
   }
 
-  console.log(rows);
-
   return (
     <Layout location={location} title={siteTitle}>
       <table>

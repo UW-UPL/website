@@ -2,7 +2,7 @@
 title: A Cautionary Tale of Amazon Web Service Classes
 date: "2022-02-09"
 description: AWS offers free lessons for developers who want to learn about their products. Just be careful when following the lab tutorial and use software that is not free. 
-author: Carson Drury
+author: carson-drury
 ---
 
 I find winter break to be a strange time for college students. Of course, since it is break, students want to relax and recoup after a long semester. Although, the length of winter break often makes students fell like they're wasting their time if they don't do something productive. CS students often take this time to create a small project or learn something new. This often allows for a balance of productivity and relaxation. As a computer science student myself, I follow this trend. I worked on a project last year during winter break so this year I decided to try learning something new. 

@@ -2,7 +2,7 @@
 title: Learning to Code With Projects
 date: "2022-02-02"
 description: How learning to program can be effective through creating projects.
-author: Rudy Banerjee
+author: rudy-banerjee
 ---
 
 Computer science is a vast field, and there are tons of different ways that people can learn and get involved with it. One of the best ways to do so is by doing computer science projects. There are many different ways to go about doing so: tinkering around with tools and tutorials freely available on the internet, attempting a longer project of some kind involving dedicated research and looking into things, and working on group projects in different settings. All of these are great ways to complement classroom learning, provide interesting directions for career directions, and help with internships and future employment. However, people sometimes have difficulty finding projects and continuing with projects they have already started. This is a natural phenomenon, and there are ways to avoid this.

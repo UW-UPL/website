@@ -25,12 +25,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
-        allPeopleYaml {
-          nodes {
-            id
-            name
-          }
-        }
       }
     `
   );
@@ -44,7 +38,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMdx.nodes;
-  const people = result.data.allPeopleYaml.nodes;
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
@@ -55,7 +48,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id;
       const nextPostId =
         index === posts.length - 1 ? null : posts[index + 1].id;
-      const authorId = people.find(p => p.name == post.frontmatter.author).id;
 
       createPage({
         path: "/blog" + post.fields.slug,
@@ -64,7 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id: post.id,
           previousPostId,
           nextPostId,
-          authorId,
+          authorId: post.frontmatter.author,
         },
       });
     });
