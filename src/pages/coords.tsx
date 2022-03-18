@@ -11,11 +11,11 @@ const CoordsIndex = ({ data, location }) => {
 
   const coords = [];
 
-  for (let i = 0; i < allPeopleYaml.edges.length; i++) {
-    if (allPeopleYaml.edges[i].node.coord) {
+  for (let i = 0; i < allPeopleYaml.nodes.length; i++) {
+    if (allPeopleYaml.nodes[i].coord) {
       coords.push({
-        data: allPeopleYaml.edges[i].node,
-        image: getImage(allFile.edges[i].node)
+        data: allPeopleYaml.nodes[i],
+        image: getImage(allFile.nodes[i])
       });
     }
   }
@@ -45,26 +45,22 @@ export const pageQuery = graphql`
       filter: { sourceInstanceName: { eq: "people" }, extension: { ne: "yml" } }
       sort: { order: ASC, fields: absolutePath }
     ) {
-      edges {
-        node {
-          childImageSharp {
-            gatsbyImageData(
-              width: 200
-              placeholder: BLURRED
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
+      nodes {
+        childImageSharp {
+          gatsbyImageData(
+            width: 200
+            placeholder: BLURRED
+            formats: [AUTO, WEBP, AVIF]
+          )
         }
       }
     }
     allPeopleYaml(sort: { order: ASC, fields: name }) {
-      edges {
-        node {
-          id
-          coord
-          name
-          url
-        }
+      nodes {
+        id
+        coord
+        name
+        url
       }
     }
   }

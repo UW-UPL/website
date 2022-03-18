@@ -9,9 +9,10 @@ const Index = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       Hi
+      <Link to={"/events"}>Events</Link>
       <Link to={"/blog"}>Blog</Link>
-      <Link to={"/hours"}>Hours</Link>
       <Link to={"/coords"}>Coords</Link>
+      <Link to={"/hours"}>Hours</Link>
     </Layout>
   );
 };
