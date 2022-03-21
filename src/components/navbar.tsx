@@ -1,6 +1,13 @@
 import * as React from "react";
 import { Link as GLink } from "gatsby";
-import { Heading, Link as CLink } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  Link as CLink,
+  Spacer,
+} from "@chakra-ui/react";
 
 interface Route {
   path: string;
@@ -36,16 +43,19 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = () => {
   return (
-    <header>
-      <Heading as={GLink} to="/">
+    <Flex as="header">
+      <Heading as={GLink} to="/" color="red.500">
         Undergraduate Projects Lab
       </Heading>
-      {ROUTES.map((route) => (
-        <CLink as={GLink} to={route.path}>
-          {route.name}
-        </CLink>
-      ))}
-    </header>
+      <Spacer />
+      <HStack spacing="10" alignItems="flex-end">
+        {ROUTES.map((route) => (
+          <CLink as={GLink} to={route.path} color="red.500">
+            {route.name}
+          </CLink>
+        ))}
+      </HStack>
+    </Flex>
   );
 };
 

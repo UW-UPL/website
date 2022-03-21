@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { Heading } from "@chakra-ui/react";
 
 import Layout from "../components/layout";
@@ -9,10 +9,7 @@ const Index = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <Link to={"/events"}>Events</Link>
-      <Link to={"/blog"}>Blog</Link>
-      <Link to={"/coords"}>Coords</Link>
-      <Link to={"/hours"}>Hours</Link>
+      <Heading size="4xl">Hi</Heading>
     </Layout>
   );
 };
