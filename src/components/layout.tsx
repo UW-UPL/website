@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Link } from "gatsby";
 
+declare const __PATH_PREFIX__: string;
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   const isRootPath = location.pathname === rootPath;
