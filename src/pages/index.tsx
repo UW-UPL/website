@@ -8,8 +8,7 @@ const Index = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Heading>Undergraduate Projects Lab</Heading>
+    <Layout location={location}>
       <Link to={"/events"}>Events</Link>
       <Link to={"/blog"}>Blog</Link>
       <Link to={"/coords"}>Coords</Link>

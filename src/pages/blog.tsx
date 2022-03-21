@@ -9,7 +9,7 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMdx.nodes;
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <Seo title="All posts" />
       <ol style={{ listStyle: `none` }}>
         {posts.map((post) => {
@@ -28,7 +28,9 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.frontmatter.date} - {post.timeToRead} min read</small>
+                  <small>
+                    {post.frontmatter.date} - {post.timeToRead} min read
+                  </small>
                 </header>
                 <section>
                   <p itemProp="description">{post.frontmatter.description}</p>

@@ -7,7 +7,7 @@ import Layout from "../components/layout";
 const CoordsIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
 
-  const { allPeopleYaml, allFile} = data;
+  const { allPeopleYaml, allFile } = data;
 
   const coords = [];
 
@@ -15,13 +15,13 @@ const CoordsIndex = ({ data, location }) => {
     if (allPeopleYaml.nodes[i].coord) {
       coords.push({
         data: allPeopleYaml.nodes[i],
-        image: getImage(allFile.nodes[i])
+        image: getImage(allFile.nodes[i]),
       });
     }
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       {coords.map((c) => (
         <div>
           <h1>{c.data.name}</h1>

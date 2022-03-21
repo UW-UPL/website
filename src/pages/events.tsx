@@ -12,7 +12,9 @@ dayjs.extend(advancedFormat);
 const EventsIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const events = data.allEventsYaml.nodes;
-  const index = events.findIndex(event => dayjs(event.date).isBefore(dayjs()));
+  const index = events.findIndex((event) =>
+    dayjs(event.date).isBefore(dayjs())
+  );
 
   const renderEventList = (events) => {
     return (
@@ -22,15 +24,15 @@ const EventsIndex = ({ data, location }) => {
             <h3>{event.title}</h3>
             <h4>{dayjs(event.date).format("dddd, MMMM Do YYYY, h:mm A")}</h4>
             <h4>{event.location}</h4>
-            <div dangerouslySetInnerHTML={{__html: event.description}} />
+            <div dangerouslySetInnerHTML={{ __html: event.description }} />
           </li>
         ))}
       </ol>
     );
-  }
+  };
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       {index > 0 && (
         <>
           <h2>Upcoming Events</h2>
