@@ -19,6 +19,8 @@
     "@chakra-ui/react": "^1.8.6",
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
+    "@fontsource/lato": "^4.5.3",
+    "@fontsource/montserrat": "^4.5.5",
     "@giscus/react": "^1.1.2",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",

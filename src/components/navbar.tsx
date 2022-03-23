@@ -1,13 +1,6 @@
 import * as React from "react";
 import { Link as GLink } from "gatsby";
-import {
-  Box,
-  Flex,
-  Heading,
-  HStack,
-  Link as CLink,
-  Spacer,
-} from "@chakra-ui/react";
+import { Flex, Heading, HStack, Link as CLink, Spacer } from "@chakra-ui/react";
 
 interface Route {
   path: string;
@@ -50,7 +43,13 @@ const Navbar: React.FC<NavbarProps> = () => {
       <Spacer />
       <HStack spacing="10" alignItems="flex-end">
         {ROUTES.map((route) => (
-          <CLink key={route.path} as={GLink} to={route.path} color="red.500">
+          <CLink
+            key={route.path}
+            as={GLink}
+            to={route.path}
+            color="red.500"
+            fontWeight="bold"
+          >
             {route.name}
           </CLink>
         ))}
