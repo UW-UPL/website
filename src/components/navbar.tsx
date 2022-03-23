@@ -50,7 +50,7 @@ const Navbar: React.FC<NavbarProps> = () => {
       <Spacer />
       <HStack spacing="10" alignItems="flex-end">
         {ROUTES.map((route) => (
-          <CLink as={GLink} to={route.path} color="red.500">
+          <CLink key={route.path} as={GLink} to={route.path} color="red.500">
             {route.name}
           </CLink>
         ))}

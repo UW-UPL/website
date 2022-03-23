@@ -28,9 +28,15 @@ const Index = ({ data, location }) => {
         bg="red.100"
         borderRightRadius="2xl"
       >
-        <Text>Coming Up &middot; Feb 12, 5:00 PM</Text>
-        <Text>Lightning Talk with Michael Gira: How to Heely</Text>
-        <Text>Location: CS 1240</Text>
+        <Text fontSize="sm" color="gray.600" textTransform="uppercase">
+          Coming Up &middot; Feb 12, 5:00 PM
+        </Text>
+        <Text color="gray.600">
+          Lightning Talk with Michael Gira: How to Heely
+        </Text>
+        <Text fontSize="sm" color="gray.600">
+          Location: CS 1240
+        </Text>
       </Box>
     </Layout>
   );
