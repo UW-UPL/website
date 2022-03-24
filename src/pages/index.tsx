@@ -123,14 +123,13 @@ const Index = ({ data, location }) => {
           <Heading textAlign="center" mb="7" color="gray.700">
             Frequently Asked Questions
           </Heading>
-          <Box>
+          <Box sx={{ columns: "2 auto" }}>
             {FAQ.map(({ q, a }) => {
               if (typeof a === "string") {
                 a = <Text>{a}</Text>;
               }
-
               return (
-                <Box display="inline-block" w="50%" p="5">
+                <Box p="5">
                   <VStack
                     alignItems="flex-start"
                     pt="8"
