@@ -50,7 +50,7 @@ const Index = ({ data, location }) => {
   return (
     <Layout location={location}>
       <PageContainer>
-        <VStack spacing="10" alignItems="flex-start" mt="40" maxW="4xl">
+        <VStack spacing="10" alignItems="flex-start" pt="28" maxW="4xl">
           <Heading as="h1" size="4xl">
             The UPL is the place to <Text color="red.500">have fun.</Text>
           </Heading>
@@ -71,17 +71,16 @@ const Index = ({ data, location }) => {
         <Text
           mb="1"
           fontSize="sm"
-          color="gray.700"
           fontWeight="medium"
           textTransform="uppercase"
           letterSpacing="0.03em"
         >
           Coming Up &middot; Feb 12, 5:00 PM
         </Text>
-        <Text mb="1" color="gray.700" fontWeight="bold">
+        <Text mb="1" fontWeight="bold">
           Lightning Talk with Michael Gira: How to Heely
         </Text>
-        <Text fontSize="sm" color="gray.700" fontWeight="normal">
+        <Text fontSize="sm" fontWeight="normal">
           Location: CS 1240
         </Text>
       </Box>
@@ -120,16 +119,16 @@ const Index = ({ data, location }) => {
       </Box>
       <Box pt={14} pb={14}>
         <PageContainer>
-          <Heading textAlign="center" mb="7" color="gray.700">
+          <Heading textAlign="center" mb="7">
             Frequently Asked Questions
           </Heading>
-          <Box sx={{ columns: "2 auto" }}>
+          <Box sx={{ columns: "2 auto", columnGap: "3.5rem" }}>
             {FAQ.map(({ q, a }) => {
               if (typeof a === "string") {
                 a = <Text>{a}</Text>;
               }
               return (
-                <Box p="5">
+                <Box pt="5" pb="5">
                   <VStack
                     alignItems="flex-start"
                     pt="8"
@@ -141,7 +140,7 @@ const Index = ({ data, location }) => {
                     borderColor="gray.50"
                     boxShadow="xl"
                   >
-                    <Heading as="h3" mb="2" lineHeight="10" color="gray.700">
+                    <Heading as="h3" mb="2" lineHeight="10">
                       {q}
                     </Heading>
                     {a}

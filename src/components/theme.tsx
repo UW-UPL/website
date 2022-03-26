@@ -5,4 +5,11 @@ export const theme = extendTheme({
     heading: "Lato, sans-serif",
     body: "Montserrat, sans-serif",
   },
+  styles: {
+    global: {
+      body: {
+        color: "gray.700",
+      },
+    },
+  },
 });

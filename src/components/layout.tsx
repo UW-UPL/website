@@ -32,7 +32,7 @@ const Layout = ({ location, children }) => {
     <ChakraProvider theme={theme}>
       <div className="global-wrapper" data-is-root-path={isRootPath}>
         <PageContainer>
-          <Box pt="10">
+          <Box pt="10" pb="16">
             <Navbar isRootPath={isRootPath} />
           </Box>
         </PageContainer>
