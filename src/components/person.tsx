@@ -44,7 +44,7 @@ const Person: React.FC<PersonProps> = ({ person }) => {
   if (person.data.url) {
     links.push(
       <Link key="url" href={person.data.url} isExternal>
-        <Icon as={FaLink} boxSize="4" />
+        <Icon as={FaLink} boxSize="4" color="gray.600" />
       </Link>
     );
   }
@@ -55,7 +55,7 @@ const Person: React.FC<PersonProps> = ({ person }) => {
         href={`https://github.com/${person.data.github}`}
         isExternal
       >
-        <Icon as={FaGithub} boxSize="5" />
+        <Icon as={FaGithub} boxSize="5" color="gray.600" />
       </Link>
     );
   }
@@ -66,7 +66,7 @@ const Person: React.FC<PersonProps> = ({ person }) => {
         href={`https://linkedin.com/in/${person.data.linkedin}`}
         isExternal
       >
-        <Icon as={FaLinkedin} boxSize="5" />
+        <Icon as={FaLinkedin} boxSize="5" color="gray.600" />
       </Link>
     );
   }
