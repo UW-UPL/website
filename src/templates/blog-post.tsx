@@ -55,7 +55,9 @@ const BlogPostTemplate = ({ data, location }) => {
             </BreadcrumbItem>
           </Breadcrumb>
           <Box as="header">
-            <Heading mb="4">{post.frontmatter.title}</Heading>
+            <Heading as="h1" mb="4" fontWeight="black">
+              {post.frontmatter.title}
+            </Heading>
             <HStack
               mb="14"
               spacing="1.5"
@@ -68,9 +70,9 @@ const BlogPostTemplate = ({ data, location }) => {
                 {author.name}
                 <Box
                   position="absolute"
-                  top="8"
+                  top="7"
                   w="100%"
-                  h="4px"
+                  h="3px"
                   bg="red.500"
                   borderRadius="full"
                 />
