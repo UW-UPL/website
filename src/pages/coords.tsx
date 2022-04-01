@@ -68,9 +68,7 @@ const CoordsIndex = ({ data, location }) => {
         </Text>
         <Flex justifyContent="center">
           {facultyAdvisors.map((c) => (
-            <Box key={c.data.id} w="100%" maxW="2xs">
-              <Person person={c} />
-            </Box>
+            <Person key={c.data.id} person={c} />
           ))}
         </Flex>
       </PageContainer>

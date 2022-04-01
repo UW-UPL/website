@@ -75,6 +75,7 @@ const Person: React.FC<PersonProps> = ({ person }) => {
     <Box
       display="inline-block"
       w="100%"
+      maxW="2xs"
       mb={10}
       bg="red.50"
       borderRadius="xl"

@@ -23,3 +23,13 @@ export function displayDate(date: Date) {
   const year = date.getUTCFullYear();
   return `${month} ${day}, ${year}`;
 }
+
+/**
+ * Display a month in a neatly formatted string.
+ * Uses UTC time because that's what's returned by Gatsby.
+ */
+export function displayMonth(date: Date) {
+  const month = MONTHS[date.getUTCMonth()];
+  const year = date.getUTCFullYear();
+  return `${month} ${year}`;
+}
