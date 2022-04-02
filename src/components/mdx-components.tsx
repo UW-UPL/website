@@ -220,6 +220,8 @@ const MDXComponents = {
   a: (props) => (
     <chakra.a
       apply="mdx.a"
+      target="_blank"
+      rel="noopener noreferrer"
       color="red.500"
       textDecoration="underline"
       textDecorationThickness="2px"
@@ -230,7 +232,7 @@ const MDXComponents = {
   p: (props) => <chakra.p apply="mdx.p" mt="6" mb="6" {...props} />,
   ul: (props) => <chakra.ul apply="mdx.ul" mt="6" mb="6" {...props} />,
   ol: (props) => <chakra.ol apply="mdx.ul" mt="6" mb="6" {...props} />,
-  li: (props) => <chakra.li mt="2" mb="2" pb="4px" {...props} />,
+  li: (props) => <chakra.li mt="2" mb="2" {...props} />,
   blockquote: (props) => (
     <Alert
       role="none"
