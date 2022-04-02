@@ -4,7 +4,8 @@ import { Link as GLink, graphql } from "gatsby";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { MDXProvider } from "@mdx-js/react";
+import { getImage } from "gatsby-plugin-image";
 import { Giscus } from "@giscus/react";
 import {
   Box,
@@ -21,6 +22,7 @@ import {
 } from "@chakra-ui/react";
 import PageContainer from "../components/page-container";
 import Person from "../components/person";
+import MDXComponents from "../components/mdx-components";
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.mdx;
@@ -31,7 +33,8 @@ const BlogPostTemplate = ({ data, location }) => {
   const image = getImage(authorImage);
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
+      {/* <Layout location={location} title={siteTitle}> */}
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -42,7 +45,7 @@ const BlogPostTemplate = ({ data, location }) => {
           itemScope
           itemType="http://schema.org/Article"
         >
-          <Breadcrumb mb="8">
+          <Breadcrumb>
             <BreadcrumbItem>
               <BreadcrumbLink as={GLink} to="/blog">
                 Blog
@@ -55,7 +58,7 @@ const BlogPostTemplate = ({ data, location }) => {
             </BreadcrumbItem>
           </Breadcrumb>
           <Box as="header">
-            <Heading as="h1" mb="4" fontWeight="black">
+            <Heading as="h1" mb="4" fontSize="6xl" fontWeight="black">
               {post.frontmatter.title}
             </Heading>
             <HStack
@@ -81,8 +84,10 @@ const BlogPostTemplate = ({ data, location }) => {
               <Text>{post.timeToRead} minute read</Text>
             </HStack>
           </Box>
-          <Box fontSize="lg" lineHeight="1.5">
-            <MDXRenderer>{post.body}</MDXRenderer>
+          <Box maxW="4xl" fontSize="xl" lineHeight="1.5">
+            <MDXProvider components={{ ...MDXComponents }}>
+              <MDXRenderer>{post.body}</MDXRenderer>
+            </MDXProvider>
           </Box>
           <Divider mt="12" mb="12" />
           <Flex justifyContent="center">
