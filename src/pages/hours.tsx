@@ -20,7 +20,7 @@ const HoursIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <table>
         <thead>
           <tr>
@@ -33,16 +33,18 @@ const HoursIndex = ({ data, location }) => {
           </tr>
         </thead>
         <tbody>
-          {rows.map(r => (
+          {rows.map((r) => (
             <tr>
-              {r.map(e => <td>{e}</td>)}
+              {r.map((e) => (
+                <td>{e}</td>
+              ))}
             </tr>
           ))}
         </tbody>
       </table>
     </Layout>
   );
-}
+};
 
 export default HoursIndex;
 
@@ -64,4 +66,3 @@ export const pageQuery = graphql`
     }
   }
 `;
-
