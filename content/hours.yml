@@ -1,84 +1,84 @@
 - day: Monday
   times:
-    - time: 10am
+    - time: 10 AM - 11 AM
       coord: ''
-    - time: 11am
+    - time: 11 AM - 12 PM
       coord: 'Michael'
-    - time: 12pm
+    - time: 12 PM - 1 PM
       coord: 'Reed'
-    - time: 1pm
+    - time: 1 PM - 2 PM
       coord: 'James'
-    - time: 2pm
+    - time: 2 PM - 3 PM
       coord: 'Berkey'
-    - time: 3pm
+    - time: 3 PM - 4 PM
       coord: 'Carson'
-    - time: 4pm
+    - time: 4 PM - 5 PM
       coord: ''
 
 - day: Tuesday
   times:
-    - time: 10am
+    - time: 10 AM - 11 AM
       coord: ''
-    - time: 11am
+    - time: 11 AM - 12 PM
       coord: 'Matt'
-    - time: 12pm
+    - time: 12 PM - 1 PM
       coord: ''
-    - time: 1pm
+    - time: 1 PM - 2 PM
       coord: 'Dana'
-    - time: 2pm
+    - time: 2 PM - 3 PM
       coord: 'Dana'
-    - time: 3pm
+    - time: 3 PM - 4 PM
       coord: 'Nick'
-    - time: 4pm
+    - time: 4 PM - 5 PM
       coord: 'Will'
 
 - day: Wednesday
   times:
-    - time: 10am
+    - time: 10 AM - 11 AM
       coord: ''
     - time: 11am
-      coord: 'Ben'
-    - time: 12pm
+      coord: ' Ben'
+    - time: 12 PM - 1 PM
       coord: 'Reed'
-    - time: 1pm
+    - time: 1 PM - 2 PM
       coord: 'Eric'
-    - time: 2pm
+    - time: 2 PM - 3 PM
       coord: 'Berkey'
-    - time: 3pm
+    - time: 3 PM - 4 PM
       coord: 'Carson'
-    - time: 4pm
+    - time: 4 PM - 5 PM
       coord: ''
 
 - day: Thursday
   times:
-    - time: 10am
+    - time: 10 AM - 11 AM
       coord: ''
-    - time: 11am
+    - time: 11 AM - 12 PM
       coord: 'Matt'
-    - time: 12pm
+    - time: 12 PM - 1 PM
       coord: 'Phoenix'
-    - time: 1pm
+    - time: 1 PM - 2 PM
       coord: 'Phoenix'
-    - time: 2pm
+    - time: 2 PM - 3 PM
       coord: 'Ben'
-    - time: 3pm
+    - time: 3 PM - 4 PM
       coord: 'Nick'
-    - time: 4pm
+    - time: 4 PM - 5 PM
       coord: 'Will'
 
 - day: Friday
   times:
-    - time: 10am
+    - time: 10 AM - 11 AM
       coord: 'James'
-    - time: 11am
+    - time: 11 AM - 12 PM
       coord: 'Michael'
-    - time: 12pm
+    - time: 12 PM - 1 PM
       coord: ''
-    - time: 1pm
+    - time: 1 PM - 2 PM
       coord: 'Eric'
-    - time: 2pm
+    - time: 2 PM - 3 PM
       coord: ''
-    - time: 3pm
+    - time: 3 PM - 4 PM
       coord: 'Rudy'
-    - time: 4pm
+    - time: 4 PM - 5 PM
       coord: 'Rudy'

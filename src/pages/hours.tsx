@@ -52,11 +52,11 @@ const HoursIndex = ({ data, location }) => {
       </Text>
       <Divider mb="4" w="60%" ml="auto" mr="auto" />
       <TableContainer w="65%" mr="auto" ml="auto" borderRadius="md">
-        <Table variant="striped" colorScheme="red">
+        <Table variant="striped" colorScheme="blackAlpha">
           <Thead>
             <Tr>
               {headers.map((e) => (
-                <Th bgColor="gray.100" color="gray.700" fontSize="md">
+                <Th bgColor="red.500" color="white" fontSize="md">
                   {e}
                 </Th>
               ))}
@@ -65,22 +65,16 @@ const HoursIndex = ({ data, location }) => {
           <Tbody>
             <Tr>
               {headers.map(() => (
-                <Td> </Td>
+                <Td bg="red" />
               ))}
             </Tr>
             {rows.map((r) => (
               <Tr>
-                {r.map((e, index) => {
-                  return index === 0 ? (
-                    <Td fontSize="lg" color="gray.700" bg="gray.50" pt="4">
-                      <Text mt="-9">{e}</Text>
-                    </Td>
-                  ) : (
-                    <Td fontSize="lg" color="gray.700" bg="gray.50" pt="4">
-                      {e}
-                    </Td>
-                  );
-                })}
+                {r.map((e) => (
+                  <Td fontSize="lg" color="gray.700" pt="4">
+                    {e}
+                  </Td>
+                ))}
               </Tr>
             ))}
           </Tbody>
