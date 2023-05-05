@@ -40,10 +40,12 @@ const HoursIndex = ({ data, location }) => {
     "Friday",
   ];
 
+  let dateTime = new Date()
+
   return (
     <Layout location={location}>
       <Heading textAlign="center" as="h1" mb="7">
-        Hours
+        Hours {dateTime.getHours()}
       </Heading>
       <Text w="60%" textAlign="left" ml="auto" mr="auto" mb="8" fontSize="lg">
         Anyone is welcome in the UPL room whenever a coord is present, and
