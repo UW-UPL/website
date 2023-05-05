@@ -1,0 +1,50 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+
+const ROUTES: {
+	path: string;
+	name: string;
+}[] = [
+	{
+		path: "/",
+		name: "Home",
+	},
+	{
+		path: "/events",
+		name: "Events",
+	},
+	{
+		path: "/blog",
+		name: "Blog",
+	},
+	{
+		path: "/coords",
+		name: "Coords",
+	},
+	{
+		path: "/hours",
+		name: "Hours",
+	},
+];
+---
+
+<div class="text-red-500">
+	<nav class="pt-11 pb-16 flex flex-row space-x-96 justify-center">
+		<h2 class="text-red-500 text-4xl font-semibold">
+			<a href="/">Undergraduate Projects Lab</a>
+		</h2>
+		<div class="flex flex-row items-end space-x-10">
+			{
+				ROUTES.map((e) => (
+					<HeaderLink
+						class="text-red-500 font-bold font-['Montserrat']"
+						href={e.path}
+					>
+						{e.name}
+					</HeaderLink>
+				))
+			}
+		</div>
+	</nav>
+</div>
