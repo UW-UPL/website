@@ -1,196 +1,91 @@
 ---
 import Layout from "../components/layout.astro";
+import CoordHours from "../content/coord-hours";
 
-const DATA = [
-	{
-		day: "Monday",
-		times: [
-			{
-				time: "10 AM - 11 AM",
-				coord: "",
-			},
-			{
-				time: "11 AM - 12 PM",
-				coord: "Michael",
-			},
-			{
-				time: "12 PM - 1 PM",
-				coord: "Reed",
-			},
-			{
-				time: "1 PM - 2 PM",
-				coord: "James",
-			},
-			{
-				time: "2 PM - 3 PM",
-				coord: "Berkey",
-			},
-			{
-				time: "3 PM - 4 PM",
-				coord: "Carson",
-			},
-			{
-				time: "4 PM - 5 PM",
-				coord: "",
-			},
-		],
-	},
-	{
-		day: "Tuesday",
-		times: [
-			{
-				time: "10 AM - 11 AM",
-				coord: "",
-			},
-			{
-				time: "11 AM - 12 PM",
-				coord: "Matt",
-			},
-			{
-				time: "12 PM - 1 PM",
-				coord: "",
-			},
-			{
-				time: "1 PM - 2 PM",
-				coord: "Dana",
-			},
-			{
-				time: "2 PM - 3 PM",
-				coord: "Dana",
-			},
-			{
-				time: "3 PM - 4 PM",
-				coord: "Nick",
-			},
-			{
-				time: "4 PM - 5 PM",
-				coord: "Will",
-			},
-		],
-	},
-	{
-		day: "Wednesday",
-		times: [
-			{
-				time: "10 AM - 11 AM",
-				coord: "",
-			},
-			{
-				time: "11am",
-				coord: " Ben",
-			},
-			{
-				time: "12 PM - 1 PM",
-				coord: "Reed",
-			},
-			{
-				time: "1 PM - 2 PM",
-				coord: "Eric",
-			},
-			{
-				time: "2 PM - 3 PM",
-				coord: "Berkey",
-			},
-			{
-				time: "3 PM - 4 PM",
-				coord: "Carson",
-			},
-			{
-				time: "4 PM - 5 PM",
-				coord: "",
-			},
-		],
-	},
-	{
-		day: "Thursday",
-		times: [
-			{
-				time: "10 AM - 11 AM",
-				coord: "",
-			},
-			{
-				time: "11 AM - 12 PM",
-				coord: "Matt",
-			},
-			{
-				time: "12 PM - 1 PM",
-				coord: "Phoenix",
-			},
-			{
-				time: "1 PM - 2 PM",
-				coord: "Phoenix",
-			},
-			{
-				time: "2 PM - 3 PM",
-				coord: "Ben",
-			},
-			{
-				time: "3 PM - 4 PM",
-				coord: "Nick",
-			},
-			{
-				time: "4 PM - 5 PM",
-				coord: "Will",
-			},
-		],
-	},
-	{
-		day: "Friday",
-		times: [
-			{
-				time: "10 AM - 11 AM",
-				coord: "James",
-			},
-			{
-				time: "11 AM - 12 PM",
-				coord: "Michael",
-			},
-			{
-				time: "12 PM - 1 PM",
-				coord: "",
-			},
-			{
-				time: "1 PM - 2 PM",
-				coord: "Eric",
-			},
-			{
-				time: "2 PM - 3 PM",
-				coord: "",
-			},
-			{
-				time: "3 PM - 4 PM",
-				coord: "Rudy",
-			},
-			{
-				time: "4 PM - 5 PM",
-				coord: "Rudy",
-			},
-		],
-	},
-];
+var rows: string[][] = [];
+for (let i = 0; i < CoordHours.length; i++) {
+  let tempArr = CoordHours[i].Coords;
+  tempArr = [CoordHours[i].Time].concat(tempArr);
+  rows.push(tempArr);
+}
 
-const times = DATA[0].times.map(d => d.time);
+let curDate = new Date();
+
+let hasCoord: boolean = false;
+
+if (
+  curDate.getDay() != 0 &&
+  curDate.getDate() <= 5 &&
+  curDate.getHours() >= 10 &&
+  curDate.getHours() <= 17
+) {
+  hasCoord =
+    CoordHours[curDate.getHours() - 10].Coords[curDate.getDay() - 1] !== "";
+}
 ---
 
 <Layout>
-	<table class="table mx-auto w-65 rounded-3xl">
-		<thead class="bg-red-700 w-65">
-			<tr>
-				{
-					["Times", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"].map(
-						(e: String) => <th>{e}</th>
-					)
-				}
-			</tr>
-		</thead>
-		<tbody>
-			{
-				DATA.map((row, i) => (
-					<tr>
-						{ row.times.map((d) => (i%2 == 0 ? <td class="bg-neutral-200">{d.coord}</td> : <td>{d.coord}</td>) )}
-					</tr>
-				))
-			}
-		</tbody>
-	</table>
+  <div class="w-3/5 text-lg mx-auto font-sans text-gray-600">
+    <p>
+      Anyone is welcome in the UPL room whenever a coord is present, and coords
+      commit to be present at certain office hours. All you need to do is come
+      in and say hi!
+    </p>
+    {
+      hasCoord ? (
+        <h5 class="pt-2 text-green-500 font-medium text-center">
+          Current Coord:{" "}
+          {CoordHours[curDate.getHours() - 10].Coords[curDate.getDay() - 1]} (
+          {CoordHours[curDate.getHours() - 10].Time})
+        </h5>
+      ) : (
+        <h5 class="pt-2 text-red-700 font-medium text-center">
+          No Coord currently scheduled. The UPL is not guaranteed to be open at this time.
+        </h5>
+      )
+    }
+  </div>
+  <div class="mt-8">
+    <table
+      class="mx-auto w-2/3 border-t-8 border-red-500 rounded-t-md border-spacing-0 border-separate"
+    >
+      <thead class="bg-red-500 font-lato">
+        <tr class="">
+          {
+            [
+              "Time",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+            ].map((e: String) => (
+              <th class="text-white text-lg text-left px-4 py-3">
+                {e.toUpperCase()}
+              </th>
+            ))
+          }
+        </tr>
+      </thead>
+      <tbody class="font-sans">
+        {
+          rows.map((row, i) => (
+            <tr>
+              {row.map((d) =>
+                i % 2 == 0 ? (
+                  <td class="text-neutral-600 bg-neutral-200 p-4 px-4 text-start text-lg border-b border-neutral-300">
+                    {d}
+                  </td>
+                ) : (
+                  <td class="text-neutral-600 bg-neutral-50 p-4 px-4 text-start text-lg">
+                    {d}
+                  </td>
+                )
+              )}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
 </Layout>

@@ -4,8 +4,8 @@ module.exports = {
 	theme: {
 		extend: {},
 		fontFamily: {
-			'body' : ['Montserrat'],
-			'header': ['Lato']
+			'sans': ['montserrat', 'sans-serif'],
+			'lato': ['lato', 'sans-serif'],
 		},
 	},
 	plugins: [],
