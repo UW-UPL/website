@@ -1,3 +1,6 @@
+// https://github.com/jonasmerlin/astro-seo
+
+
 // import * as React from "react";
 // import PropTypes from "prop-types";
 // import { Helmet } from "react-helmet";

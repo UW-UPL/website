@@ -1,0 +1,14 @@
+---
+import type { CoordInfo } from "../content/coords";
+let { coord } = Astro.props;
+
+coord = coord as CoordInfo;
+
+const titles = coord.study ? [coord.grade, coord.study] : [coord.grade]
+---
+
+<div class="block bg-red-50 drop-shadow-lg rounded-md pb-4 px-2">
+  <p class="text-sm">{titles.join(" - ")}</p>
+  <h1 class="text-xl font-bold">{coord.name}</h1>
+  <p class="text-sm">{coord.bio}</p>
+</div>

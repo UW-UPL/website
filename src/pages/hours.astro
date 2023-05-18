@@ -11,16 +11,23 @@ for (let i = 0; i < CoordHours.length; i++) {
 
 let curDate = new Date();
 
-let hasCoord: boolean = false;
+let curCoordInfo = {
+  hasCoord: false,
+  Coord: "",
+  Time: ""
+};
 
 if (
   curDate.getDay() != 0 &&
-  curDate.getDate() <= 5 &&
+  curDate.getDay() <= 5 &&
   curDate.getHours() >= 10 &&
   curDate.getHours() <= 17
 ) {
-  hasCoord =
-    CoordHours[curDate.getHours() - 10].Coords[curDate.getDay() - 1] !== "";
+  curCoordInfo = {
+    hasCoord: CoordHours[curDate.getHours() - 10].Coords[curDate.getDay() - 1] !== "",
+    Coord: CoordHours[curDate.getHours() - 10].Coords[curDate.getDay() - 1],
+    Time: CoordHours[curDate.getHours() - 10].Time
+  }
 }
 ---
 
@@ -32,15 +39,14 @@ if (
       in and say hi!
     </p>
     {
-      hasCoord ? (
+      curCoordInfo.hasCoord ? (
         <h5 class="pt-2 text-green-500 font-medium text-center">
-          Current Coord:{" "}
-          {CoordHours[curDate.getHours() - 10].Coords[curDate.getDay() - 1]} (
-          {CoordHours[curDate.getHours() - 10].Time})
+          Current Coord: {curCoordInfo.Coord} ({curCoordInfo.Time})
         </h5>
       ) : (
         <h5 class="pt-2 text-red-700 font-medium text-center">
-          No Coord currently scheduled. The UPL is not guaranteed to be open at this time.
+          No Coord currently scheduled. The UPL is not guaranteed to be open at
+          this time.
         </h5>
       )
     }
