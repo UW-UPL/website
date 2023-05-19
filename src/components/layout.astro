@@ -41,7 +41,9 @@ import "@fontsource/montserrat/900.css";
 	</head>
 	<body>
         <Header/>
-        <slot />
+		<div class="md:w-3/4 md:mx-auto">
+        	<slot />
+		</div>
 		<footer class="p-6 text-black text-center font-sans">upl@cs.wisc.edu</footer>
 	</body>
 </html>

@@ -2,22 +2,16 @@
 import Layout from "../components/layout.astro";
 import CoordCard from "../components/CoordCard.astro";
 import Coords, { CoordInfo } from "../content/coords";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
-// https://picsum.photos/200/300
-
 ---
 
 <Layout>
-  <div class="w-9/12 mx-auto text-gray-700 font-sans">
-    <h1 class="text-4xl font-semibold font-lato text-center">Meet the Coords</h1>
+  <div class="text-gray-700 font-sans">
+    <h1 class="text-4xl font-semibold font-lato text-center pb-2">Meet the Coords</h1>
     <p class="font-light pb-14 text-center">
       These are the people that run the UPL day-to-day. If you have any
       questions, reach out to EMAIL
     </p>
-    <div class="grid lg:grid-cols-4 md:grid-cols-1 gap-8">
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 xs:grid-cols-1 gap-10">
       {
         Coords.map((coord: CoordInfo) => (
             <CoordCard coord={coord}/>

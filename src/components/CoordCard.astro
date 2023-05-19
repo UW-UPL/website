@@ -5,10 +5,15 @@ let { coord } = Astro.props;
 coord = coord as CoordInfo;
 
 const titles = coord.study ? [coord.grade, coord.study] : [coord.grade]
+
+const card = await import('../content/profiles/' + coord.image);
 ---
 
-<div class="block bg-red-50 drop-shadow-lg rounded-md pb-4 px-2">
-  <p class="text-sm">{titles.join(" - ")}</p>
-  <h1 class="text-xl font-bold">{coord.name}</h1>
-  <p class="text-sm">{coord.bio}</p>
+<div class="h-fit block bg-red-50 drop-shadow-xl rounded-b-md pb-4">
+  <img src={card.default} alt={coord.name} class="inset-0 object-cover overflow-hidden rounded-t-md w-full overflow-wrap">
+  <div class="px-3 flex flex-col">
+    <p class="text-sm pt-3 pb-1">{titles.join(" - ")}</p>
+    <h1 class="text-xl font-bold">{coord.name}</h1>
+    <p class="text-sm">{coord.bio}</p>
+  </div>
 </div>

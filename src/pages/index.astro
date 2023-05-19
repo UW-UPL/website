@@ -1,18 +1,25 @@
 ---
 import Layout from "../components/layout.astro";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 ---
 
 <Layout>
   <div class="mx-auto space-x-96">
-    <div class="w-9/12 mx-auto flex flex-col font-bold content-start space-y-6">
+    <div class="flex flex-col font-bold content-start space-y-6">
       <div>
         <h1 class="text-7xl pt-24 text-gray-700">The UPL is the place to</h1>
         <h1 class="text-7xl text-red-500">have fun.</h1>
       </div>
       <button
-        class="w-fit bg-red-500 text-white font-sans font-semibold py-2 px-4 rounded-md hover:bg-red-700 focus:outline outline-offset outline-3 outline-sky-300"
-        >Join the Discord</button
+        class="inline-flex items-center w-fit bg-red-500 text-white font-sans font-semibold py-2 px-3 rounded-md hover:bg-red-700 focus:outline outline-offset outline-3 outline-sky-300"
       >
+        <div class="w-2/12 mr-2">
+          <FontAwesomeIcon icon={faDiscord} />
+        </div>
+        <p class="flex-nowrap w-40">Join the Discord</p>
+      </button>
     </div>
   </div>
 </Layout>
