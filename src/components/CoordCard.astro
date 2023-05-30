@@ -1,19 +1,67 @@
 ---
 import type { CoordInfo } from "../content/coords";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+
 let { coord } = Astro.props;
+let coordInfo: CoordInfo = coord;
 
-coord = coord as CoordInfo;
+const titles = coord.study ? [coord.grade, coord.study] : [coord.grade];
 
-const titles = coord.study ? [coord.grade, coord.study] : [coord.grade]
-
-const card = await import('../content/profiles/' + coord.image);
+const card = await import("../content/profiles/" + coord.image);
 ---
 
-<div class="h-fit block bg-red-50 drop-shadow-xl rounded-b-md pb-4">
-  <img src={card.default} alt={coord.name} class="inset-0 object-cover overflow-hidden rounded-t-md w-full overflow-wrap">
+<div class="h-fit block bg-red-50 drop-shadow-xl rounded-md pb-4">
+  <img
+    src={card.default}
+    alt={coordInfo.name}
+    class="inset-0 object-cover overflow-hidden rounded-t-md w-full overflow-wrap"
+  />
   <div class="px-3 flex flex-col">
     <p class="text-sm pt-3 pb-1">{titles.join(" - ")}</p>
-    <h1 class="text-xl font-bold">{coord.name}</h1>
+    <h1 class="text-xl font-bold">{coordInfo.name}</h1>
+    <div class="flex flex-row my-1">
+      {
+        coordInfo.personalLink && (
+          <div class="w-1/12 my-auto mr-2">
+            <a
+              href={coordInfo.personalLink}
+              rel="noopener nofollow"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faLink} />
+            </a>
+          </div>
+        )
+      }
+      {
+        coordInfo.github && (
+          <div class="w-1/12 mr-2">
+            <a
+              href={"https://github.com/" + coordInfo.github}
+              rel="noopener nofollow"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </div>
+        )
+      }
+      {
+        coordInfo.linkedIn && (
+          <div class="w-1/12 mr-2">
+            <a
+              href={"https://www.linkedin.com/in/" + coordInfo.linkedIn}
+              rel="noopener nofollow"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+          </div>
+        )
+      }
+    </div>
     <p class="text-sm">{coord.bio}</p>
   </div>
 </div>

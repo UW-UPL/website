@@ -1,13 +1,13 @@
 interface CoordInfo {
-  name: String;
+  name: string;
   isActive: boolean;
-  grade: String;
-  image: String;
-  study?: String;
-  personalLink?: String;
-  github?: String;
-  linkedIn?: String;
-  bio?: String;
+  grade: string;
+  image: string;
+  study?: string;
+  personalLink?: string;
+  github?: string;
+  linkedIn?: string;
+  bio?: string;
 }
 
 let Coords: CoordInfo[] = [
@@ -46,7 +46,7 @@ let Coords: CoordInfo[] = [
     study: "CE/CS",
     personalLink: "https://github.com/rudyb2001",
     bio: "I am a sophomore at UW Madison studying computer science. I have background in computer vision and other stuff. I have never written a line of JavaScript before, but that may change soon.",
-    image: "michael-gira.jpg"
+    image: "will-woods.jpg"
   },
   {
     name: "Rudy Banerjee",
@@ -55,7 +55,7 @@ let Coords: CoordInfo[] = [
     study: "CE/CS",
     personalLink: "https://github.com/rudyb2001",
     bio: "I am a sophomore at UW Madison studying computer science. I have background in computer vision and other stuff. I have never written a line of JavaScript before, but that may change soon.",
-    image: "michael-gira.jpg"
+    image: "phoenix-kahlo.jpg"
   },
   {
     name: "Rudy Banerjee",
