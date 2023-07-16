@@ -10,7 +10,17 @@ interface CoordInfo {
   bio?: string;
 }
 
-let Coords: CoordInfo[] = [
+let CoordsBio: CoordInfo[] = [
+  {
+    name: "Michael Berkey",
+    isActive: true,
+    grade: "Senior",
+    study: "CS",
+    github: "mdberkey",
+    linkedIn: "michael-berkey1",
+    bio: "O_o",
+    image: "michael-berkey.png"
+  },
   {
     name: "Michael Gira",
     isActive: true,
@@ -95,5 +105,5 @@ let Coords: CoordInfo[] = [
   },
 ];
 
-export default Coords;
+export default CoordsBio;
 export type { CoordInfo };

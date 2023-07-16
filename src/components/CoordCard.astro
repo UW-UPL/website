@@ -1,7 +1,10 @@
 ---
 import type { CoordInfo } from "../content/coords";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import {
+  faLinkedin,
+  faGithub
+} from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 let { coord } = Astro.props;
@@ -10,6 +13,25 @@ let coordInfo: CoordInfo = coord;
 const titles = coord.study ? [coord.grade, coord.study] : [coord.grade];
 
 const card = await import("../content/profiles/" + coord.image);
+
+// dynamically create coordCard links, with a specific icon and href
+const coordLinks = [
+  {
+    givenLink: coordInfo.personalLink,
+    link: coordInfo.personalLink,
+    icon: faLink,
+  },
+  {
+    givenLink: coordInfo.github,
+    link: "https://github.com/" + coordInfo.github,
+    icon: faGithub,
+  },
+  {
+    givenLink: coordInfo.linkedIn,
+    link: "https://www.linkedin.com/in/" + coordInfo.linkedIn,
+    icon: faLinkedin,
+  },
+].filter(e => e.givenLink); // filter out empty links/not given links
 ---
 
 <div class="h-fit block bg-red-50 drop-shadow-xl rounded-md pb-4">
@@ -23,43 +45,13 @@ const card = await import("../content/profiles/" + coord.image);
     <h1 class="text-xl font-bold">{coordInfo.name}</h1>
     <div class="flex flex-row my-1">
       {
-        coordInfo.personalLink && (
-          <div class="w-1/12 my-auto mr-2">
-            <a
-              href={coordInfo.personalLink}
-              rel="noopener nofollow"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faLink} />
-            </a>
-          </div>
-        )
-      }
-      {
-        coordInfo.github && (
+        coordLinks.map((e) => (
           <div class="w-1/12 mr-2">
-            <a
-              href={"https://github.com/" + coordInfo.github}
-              rel="noopener nofollow"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faGithub} />
+            <a href={e.link} rel="noopener nofollow" target="_blank">
+              <FontAwesomeIcon icon={e.icon} />
             </a>
           </div>
-        )
-      }
-      {
-        coordInfo.linkedIn && (
-          <div class="w-1/12 mr-2">
-            <a
-              href={"https://www.linkedin.com/in/" + coordInfo.linkedIn}
-              rel="noopener nofollow"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-          </div>
-        )
+        )) // turn links into icon buttons
       }
     </div>
     <p class="text-sm">{coord.bio}</p>
