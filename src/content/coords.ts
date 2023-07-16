@@ -50,12 +50,12 @@ let CoordsBio: CoordInfo[] = [
     image: "rudy-banerjee.jpg"
   },
   {
-    name: "Rudy Banerjee",
+    name: "Pranav Dronavalli",
     isActive: true,
     grade: "Junior",
-    study: "CE/CS",
-    personalLink: "https://github.com/rudyb2001",
-    bio: "I am a sophomore at UW Madison studying computer science. I have background in computer vision and other stuff. I have never written a line of JavaScript before, but that may change soon.",
+    study: "CS/Math",
+    personalLink: "https://github.com/dronavallipranav",
+    bio: "Expert on system design&#41 (deciding whether to use a relational or non-relational DB for a comprehensive pokedex)",
     image: "will-woods.jpg"
   },
   {
