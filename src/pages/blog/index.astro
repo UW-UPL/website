@@ -1,6 +1,5 @@
 ---
-import { getCollection, getEntryBySlug } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
+import { getCollection } from "astro:content";
 import Layout from "../../components/layout.astro";
 import BlogPostCard from "../../components/BlogPostCard.astro";
 
@@ -40,9 +39,7 @@ let previousMonthYear = "";
 			return (
 				<div class="mt-14">
 					{monthYear}
-					<BlogPostCard
-						post={post}
-					/>
+					<BlogPostCard {...post} />
 				</div>
 			);
 		})

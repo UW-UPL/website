@@ -1,27 +1,37 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import Header from '../components/Header.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import Layout from '../components/layout.astro'
+import type { CollectionEntry } from "astro:content";
+import Header from "../components/Header.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Layout from "../components/layout.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"] & {minutesRead: string};
 
-const { title, description, pubDate, updatedDate, image } = Astro.props;
+const { title, description, pubDate, updatedDate, image, author, minutesRead } = Astro.props;
 ---
 
 <Layout>
-	<article>
-		{image && <img width={720} height={360} src={image} alt="" />}
-		<h1 class="title">{title}</h1>
-		<FormattedDate date={pubDate} />
-		{
-			updatedDate && (
-				<div class="last-updated-on">
-					Last updated on <FormattedDate date={updatedDate} />
-				</div>
-			)
-		}
-		<hr />
-		<slot />
-	</article>
+	<div class="inline w-full overflow-hidden text-slate-800">
+		<div class="mx-auto w-3/4">
+			<h1 class="text-6xl font-black">{title}</h1>
+			<div class="flex flex-row my-5 font-sans font-semibold text-slate-500 text-xl space-x-1">
+				<h2 class="underline underline-offset-8 decoration-2 underline decoration-red-500">{author}</h2>
+				<span>{" · "}</span>
+				<h1>{minutesRead}</h1>
+				<span>{" · "}</span>
+				<FormattedDate date={pubDate} />
+				{
+					updatedDate && (
+						<>
+							<span>{" · "}</span>
+							<h1>Last updated on <FormattedDate date={updatedDate} /></h1>
+						</>
+					)
+				}
+			</div>
+			<hr class="mb-10" />
+			<div class="text-base/6 font-sans prose prose-lg prose-zinc">
+				<slot />
+			</div>
+		</div>
+	</div>
 </Layout>

@@ -8,5 +8,7 @@ module.exports = {
 			'lato': ['lato', 'sans-serif'],
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography'),
+	],
 }

@@ -38,10 +38,10 @@ const coordLinks = [
   <img
     src={card.default}
     alt={coordInfo.name}
-    class="inset-0 object-cover overflow-hidden rounded-t-md w-full overflow-wrap"
+    class="aspect-square inset-0 object-cover overflow-hidden rounded-t-md w-full overflow-wrap"
   />
   <div class="px-3 flex flex-col">
-    <p class="text-sm pt-3 pb-1">{titles.join(" - ")}</p>
+    <p class="text-sm pt-3 pb-1">{titles.join(" · ")}</p>
     <h1 class="text-xl font-bold">{coordInfo.name}</h1>
     <div class="flex flex-row my-1">
       {
