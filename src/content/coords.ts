@@ -34,7 +34,7 @@ let CoordsBio: CoordInfo[] = [
   },
   {
     name: "Nick Winans",
-    isActive: true,
+    isActive: false,
     grade: "Senior",
     personalLink: "https://nick.winans.codes",
     bio: "I commit tax fraud.",

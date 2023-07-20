@@ -3,10 +3,15 @@ import type { CollectionEntry } from "astro:content";
 import Header from "../components/Header.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import Layout from "../components/layout.astro";
+import type { CoordInfo } from "../content/coords"
+import CoordsBio from "../content/coords"
+import CoordCard from "../components/CoordCard.astro"
 
 type Props = CollectionEntry<"blog">["data"] & {minutesRead: string};
 
 const { title, description, pubDate, updatedDate, image, author, minutesRead } = Astro.props;
+
+const matchedCoord : CoordInfo | undefined = CoordsBio.find(d => d.name === author);
 ---
 
 <Layout>
@@ -32,6 +37,10 @@ const { title, description, pubDate, updatedDate, image, author, minutesRead } =
 			<div class="text-base/6 font-sans prose prose-lg prose-zinc">
 				<slot />
 			</div>
+			<hr class="my-5" />
+			{
+				matchedCoord && (<CoordCard coord={matchedCoord} isHorizontal={true} />) 
+			}
 		</div>
 	</div>
 </Layout>

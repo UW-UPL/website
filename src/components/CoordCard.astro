@@ -1,59 +1,73 @@
 ---
 import type { CoordInfo } from "../content/coords";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLinkedin,
-  faGithub
-} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 
-let { coord } = Astro.props;
+let { coord, isHorizontal } = Astro.props;
 let coordInfo: CoordInfo = coord;
 
-const titles = coord.study ? [coord.grade, coord.study] : [coord.grade];
+// a really convoluted way to I know, but this displays a grade only if the coord is active, and a study only if they have one
+const titles = [
+	...(coord.isActive ? [coord.grade] : []),
+	...(coord.study ? [coord.study] : []),
+];
 
 const card = await import("../content/profiles/" + coord.image);
 
 // dynamically create coordCard links, with a specific icon and href
 const coordLinks = [
-  {
-    givenLink: coordInfo.personalLink,
-    link: coordInfo.personalLink,
-    icon: faLink,
-  },
-  {
-    givenLink: coordInfo.github,
-    link: "https://github.com/" + coordInfo.github,
-    icon: faGithub,
-  },
-  {
-    givenLink: coordInfo.linkedIn,
-    link: "https://www.linkedin.com/in/" + coordInfo.linkedIn,
-    icon: faLinkedin,
-  },
-].filter(e => e.givenLink); // filter out empty links/not given links
+	{
+		givenLink: coordInfo.personalLink,
+		link: coordInfo.personalLink,
+		icon: faLink,
+	},
+	{
+		givenLink: coordInfo.github,
+		link: "https://github.com/" + coordInfo.github,
+		icon: faGithub,
+	},
+	{
+		givenLink: coordInfo.linkedIn,
+		link: "https://www.linkedin.com/in/" + coordInfo.linkedIn,
+		icon: faLinkedin,
+	},
+].filter((e) => e.givenLink); // filter out empty links/not given links
+
+// styling depending on whether the card is being displayed horizontally or vertically (default)
+const additionalCardStyles = isHorizontal
+	? "flex flex-row min-h-56 h-full"
+	: "pb-4";
+const additionalImgStyles = isHorizontal
+	? "max-h-60 rounded-l-md h-full flex-auto grow-0"
+	: "inset-0 overflow-hidden rounded-t-md w-full";
+
+const iconSizeStyle = isHorizontal ? "w-6" : "w-1/12";
 ---
 
-<div class="h-fit block bg-red-50 drop-shadow-xl rounded-md pb-4">
-  <img
-    src={card.default}
-    alt={coordInfo.name}
-    class="aspect-square inset-0 object-cover overflow-hidden rounded-t-md w-full overflow-wrap"
-  />
-  <div class="px-3 flex flex-col">
-    <p class="text-sm pt-3 pb-1">{titles.join(" · ")}</p>
-    <h1 class="text-xl font-bold">{coordInfo.name}</h1>
-    <div class="flex flex-row my-1">
-      {
-        coordLinks.map((e) => (
-          <div class="w-1/12 mr-2">
-            <a href={e.link} rel="noopener nofollow" target="_blank">
-              <FontAwesomeIcon icon={e.icon} />
-            </a>
-          </div>
-        )) // turn links into icon buttons
-      }
-    </div>
-    <p class="text-sm">{coord.bio}</p>
-  </div>
+<div
+	class={"font-lato h-fit block bg-red-50 drop-shadow-xl rounded-md " +
+		additionalCardStyles}
+>
+	<img
+		src={card.default}
+		alt={coordInfo.name}
+		class={"aspect-square object-cover " + additionalImgStyles}
+	/>
+	<div class="px-3 flex flex-col">
+		<p class="text-sm pt-3 pb-1">{titles.join(" · ")}</p>
+		<h1 class="text-xl font-bold">{coordInfo.name}</h1>
+		<div class="flex flex-row my-1">
+			{
+				coordLinks.map((e) => (
+					<div class={"mr-2 my-auto " + iconSizeStyle}>
+						<a href={e.link} rel="noopener nofollow" target="_blank">
+							<FontAwesomeIcon icon={e.icon} />
+						</a>
+					</div>
+				)) // turn links into icon buttons
+			}
+		</div>
+		<p class="text-sm">{coord.bio}</p>
+	</div>
 </div>
