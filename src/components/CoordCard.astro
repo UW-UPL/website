@@ -1,11 +1,11 @@
 ---
-import type { CoordInfo } from "../content/coords";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
+import type { CollectionEntry } from "astro:content";
 
 let { coord, isHorizontal } = Astro.props;
-let coordInfo: CoordInfo = coord;
+let coordInfo = (coord as CollectionEntry<"coordinators">).data;
 
 // a really convoluted way to I know, but this displays a grade only if the coord is active, and a study only if they have one
 const titles = [
@@ -13,7 +13,7 @@ const titles = [
 	...(coord.study ? [coord.study] : []),
 ];
 
-const card = await import("../content/profiles/" + coord.image);
+const card = await import(`../content/profiles/${coord.data.image}`);
 
 // dynamically create coordCard links, with a specific icon and href
 const coordLinks = [
@@ -49,11 +49,16 @@ const iconSizeStyle = isHorizontal ? "w-6" : "w-1/12";
 	class={"font-lato h-fit block bg-red-50 drop-shadow-xl rounded-md " +
 		additionalCardStyles}
 >
-	<img
-		src={card.default}
-		alt={coordInfo.name}
-		class={"aspect-square object-cover " + additionalImgStyles}
-	/>
+	{
+		coordInfo.image && (
+			<img
+				src={card.default}
+				alt={coordInfo.name}
+				class={"aspect-square object-cover " + additionalImgStyles}
+			/>
+		)
+	}
+
 	<div class="px-3 flex flex-col">
 		<p class="text-sm pt-3 pb-1">{titles.join(" · ")}</p>
 		<h1 class="text-xl font-bold">{coordInfo.name}</h1>
@@ -68,6 +73,6 @@ const iconSizeStyle = isHorizontal ? "w-6" : "w-1/12";
 				)) // turn links into icon buttons
 			}
 		</div>
-		<p class="text-sm">{coord.bio}</p>
+		<p class="text-sm">{coordInfo.bio}</p>
 	</div>
 </div>

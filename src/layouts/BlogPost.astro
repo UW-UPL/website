@@ -1,17 +1,16 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import Header from "../components/Header.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
-import Layout from "../components/layout.astro";
-import type { CoordInfo } from "../content/coords"
-import CoordsBio from "../content/coords"
+import Layout from "./Layout.astro";
 import CoordCard from "../components/CoordCard.astro"
 
 type Props = CollectionEntry<"blog">["data"] & {minutesRead: string};
 
 const { title, description, pubDate, updatedDate, image, author, minutesRead } = Astro.props;
 
-const matchedCoord : CoordInfo | undefined = CoordsBio.find(d => d.name === author);
+const coordsBio = await getCollection("coordinators");
+
+const matchedCoord = coordsBio.find(d => d.data.name === author);
 ---
 
 <Layout>

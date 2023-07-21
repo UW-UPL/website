@@ -1,26 +1,18 @@
-# Astro Starter Kit: Blog
+# UPL UW Website
 
-```
-npm create astro@latest -- --template blog
-```
+Built in Astro and using Tailwind, this is the UPL's basic info website and blog. 
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## Adding a new Coordinator
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Under `/src/content/coordinators` contains the bios for each Coordinator, create a json file called `firstname-lastname.json` and follow the schema described in `/src/content/config.ts` for coordinators.
 
+To add your picture, title it however you like and save it to  `/src/content/profiles`, reference it just by the file name in the json file.
 
-![blog](https://user-images.githubusercontent.com/4677417/186189140-4ef17aac-c3c9-4918-a8c2-ce86ba1bb394.png)
+## Adding a new Blog Post
 
-Features:
+Create a new .mdx file under `/src/content/blog`, following the schema described in `/src/content/config.ts` for blog posts. It can be saved as `blog-post.mdx` or `blog-post/index.mdx`, both will work.
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+# Astro Generated ReadMe
 
 ## 🚀 Project Structure
 
@@ -63,7 +55,3 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).

@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../../components/layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import BlogPostCard from "../../components/BlogPostCard.astro";
 
 // get all blog posts, sort by publish date
@@ -19,7 +19,7 @@ let previousMonthYear = "";
 
 <Layout>
 	<h1 class="text-4xl font-semibold font-lato text-center pb-2">Blog</h1>
-	<p class="font-light pb-14 text-center">
+	<p class="font-sans text-lg text-gray-600 font-light pb-14 text-center">
 		Various ramblings from coords and other friends. Learn something new
 		about technology, and maybe even yourself.
 	</p>

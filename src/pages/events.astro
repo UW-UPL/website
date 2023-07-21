@@ -1,8 +1,19 @@
 ---
-import Layout from "../components/layout.astro";
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
 
+const events = (await getCollection("events"))[0];
 ---
 
 <Layout>
-    Hello, there!
+	{
+		events.data.events.map((d) => (
+			<div class="my-10">
+				<h1>
+					{d.title} {d.location}
+				</h1>
+				<p>{d.description}</p>
+			</div>
+		))
+	}
 </Layout>

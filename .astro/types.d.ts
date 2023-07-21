@@ -281,7 +281,46 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"profiles": {
+		"coordinators": {
+"david-teather": {
+	id: "david-teather";
+  collection: "coordinators";
+  data: InferEntrySchema<"coordinators">
+};
+"michael-berkey": {
+	id: "michael-berkey";
+  collection: "coordinators";
+  data: InferEntrySchema<"coordinators">
+};
+"michael-gira": {
+	id: "michael-gira";
+  collection: "coordinators";
+  data: InferEntrySchema<"coordinators">
+};
+"nick-winans": {
+	id: "nick-winans";
+  collection: "coordinators";
+  data: InferEntrySchema<"coordinators">
+};
+"pranav-dronavalli": {
+	id: "pranav-dronavalli";
+  collection: "coordinators";
+  data: InferEntrySchema<"coordinators">
+};
+"rudy-banerjee": {
+	id: "rudy-banerjee";
+  collection: "coordinators";
+  data: InferEntrySchema<"coordinators">
+};
+};
+"events": {
+"events": {
+	id: "events";
+  collection: "events";
+  data: InferEntrySchema<"events">
+};
+};
+"profiles": {
 };
 
 	};
