@@ -13,6 +13,8 @@ const titles = [
 	...(coord.study ? [coord.study] : []),
 ];
 
+console.log(coord.data.image)
+
 const card = await import(`../content/profiles/${coord.data.image}`);
 
 // dynamically create coordCard links, with a specific icon and href

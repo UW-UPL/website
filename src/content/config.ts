@@ -22,20 +22,16 @@ const blog = defineCollection({
 });
 
 const events = defineCollection({
-  type: "data",
+  type: "content",
   schema: z.object({
-    events: z.array(
-      z.object({
-        title: z.string(),
-        date: z
-          .string()
-          .or(z.date())
-          .transform((val) => new Date(val)),
-        location: z.string(),
-        description: z.optional(z.string()),
-      })
-    ),
-  }),
+    title: z.string(),
+    date: z
+      .string()
+      .or(z.date())
+      .transform((val) => new Date(val)),
+    location: z.string(),
+    description: z.optional(z.string()),
+  })
 });
 
 const coordinators = defineCollection({

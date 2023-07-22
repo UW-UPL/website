@@ -213,13 +213,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"first-post.md": {
-	id: "first-post.md";
+"first-post.mdx": {
+	id: "first-post.mdx";
   slug: "first-post";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 "hatathon-2022/index.md": {
 	id: "hatathon-2022/index.md";
   slug: "hatathon-2022";
@@ -248,13 +248,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"second-post.md": {
-	id: "second-post.md";
+"second-post.mdx": {
+	id: "second-post.mdx";
   slug: "second-post";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 "test-post-please-ignore/index.md": {
 	id: "test-post-please-ignore/index.md";
   slug: "test-post-please-ignore";
@@ -275,6 +275,85 @@ declare module 'astro:content' {
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
+} & { render(): Render[".mdx"] };
+};
+"events": {
+"a-combinatorial-problem-reed-nelson.mdx": {
+	id: "a-combinatorial-problem-reed-nelson.mdx";
+  slug: "a-combinatorial-problem-reed-nelson";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".mdx"] };
+"cache-and-memory-friendly-programming-matt-wildman.mdx": {
+	id: "cache-and-memory-friendly-programming-matt-wildman.mdx";
+  slug: "cache-and-memory-friendly-programming-matt-wildman";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".mdx"] };
+"common-pitfalls-of-machine-learning-in-quantitative-trading-shrey-shah.mdx": {
+	id: "common-pitfalls-of-machine-learning-in-quantitative-trading-shrey-shah.mdx";
+  slug: "common-pitfalls-of-machine-learning-in-quantitative-trading-shrey-shah";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".mdx"] };
+"deploying-and-securing-virtualized-self-hosted-servers-michael-grube.mdx": {
+	id: "deploying-and-securing-virtualized-self-hosted-servers-michael-grube.mdx";
+  slug: "deploying-and-securing-virtualized-self-hosted-servers-michael-grube";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".mdx"] };
+"fundamentals-of-ui-design-michael-gira.mdx": {
+	id: "fundamentals-of-ui-design-michael-gira.mdx";
+  slug: "fundamentals-of-ui-design-michael-gira";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".mdx"] };
+"keyboard-matrices-and-debouncing-nick-winans.mdx": {
+	id: "keyboard-matrices-and-debouncing-nick-winans.mdx";
+  slug: "keyboard-matrices-and-debouncing-nick-winans";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".mdx"] };
+"kicad-and-keyboards---a-keynote-nick-winans.mdx": {
+	id: "kicad-and-keyboards---a-keynote-nick-winans.mdx";
+  slug: "kicad-and-keyboards---a-keynote-nick-winans";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".mdx"] };
+"resumes-interviewing-and-internships---everything-you-need-to-know-matt-wildman.mdx": {
+	id: "resumes-interviewing-and-internships---everything-you-need-to-know-matt-wildman.mdx";
+  slug: "resumes-interviewing-and-internships---everything-you-need-to-know-matt-wildman";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".mdx"] };
+"upl-course-night.mdx": {
+	id: "upl-course-night.mdx";
+  slug: "upl-course-night";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".mdx"] };
+"upl-hatathon.mdx": {
+	id: "upl-hatathon.mdx";
+  slug: "upl-hatathon";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
+} & { render(): Render[".mdx"] };
+"upl-open-house.mdx": {
+	id: "upl-open-house.mdx";
+  slug: "upl-open-house";
+  body: string;
+  collection: "events";
+  data: InferEntrySchema<"events">
 } & { render(): Render[".mdx"] };
 };
 
@@ -311,13 +390,6 @@ declare module 'astro:content' {
 	id: "rudy-banerjee";
   collection: "coordinators";
   data: InferEntrySchema<"coordinators">
-};
-};
-"events": {
-"events": {
-	id: "events";
-  collection: "events";
-  data: InferEntrySchema<"events">
 };
 };
 "profiles": {

@@ -1,19 +1,37 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import EventCard from "../components/EventCard.astro";
 
-const events = (await getCollection("events"))[0];
+const events = await Promise.all(
+	(
+		await getCollection("events")
+	)
+		.sort(
+			(a, b) =>
+				b.data.date.getUTCMilliseconds() - a.data.date.getUTCMilliseconds()
+		)
+		.map(async (d) => {
+			return {
+				...d.data,
+				content: await d.render(),
+			};
+		})
+);
+
+const curDate = new Date();
+
+const futureEvents = events.filter((d) => d.date > curDate);
+
+const pastEvents = events.filter((d) => d.date <= curDate);
 ---
 
 <Layout>
+	<h1 class="ml-2 mb-4 text-6xl font-bold">Upcoming Events</h1>
+	{futureEvents.map((d) => <EventCard {...d} />)}
 	{
-		events.data.events.map((d) => (
-			<div class="my-10">
-				<h1>
-					{d.title} {d.location}
-				</h1>
-				<p>{d.description}</p>
-			</div>
-		))
+		futureEvents.length === 0 && <p class="ml-2 mb-4 text-xl font-bold">No upcoming events</p>
 	}
+	<h1 class="ml-2 mb-4 text-6xl font-bold">Past Events</h1>
+	{pastEvents.map((d) => <EventCard {...d} />)}
 </Layout>

@@ -48,7 +48,7 @@ Three asterisks for a thematic break:
 
 ---
 
-![Alt text](/php-programming-language.jpg "Personal Home Page")
+![Alt text](/public/php-programming-language.jpg "Personal Home Page")
 
 - asterisks for unordered items
 - asterisks for unordered items
