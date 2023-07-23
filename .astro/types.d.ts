@@ -392,8 +392,6 @@ declare module 'astro:content' {
   data: InferEntrySchema<"coordinators">
 };
 };
-"profiles": {
-};
 
 	};
 

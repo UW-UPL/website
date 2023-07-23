@@ -13,7 +13,7 @@ const titles = [
 	...(coordInfo.study ? [coordInfo.study] : []),
 ];
 
-const card = await import(`../content/profiles/${coord.data.image}`);
+// const card = await import(`../content/profiles/${coord.data.image}`);
 
 // dynamically create coordCard links, with a specific icon and href
 const coordLinks = [
@@ -52,7 +52,7 @@ const iconSizeStyle = isHorizontal ? "w-6" : "w-1/12";
 	{
 		coordInfo.image && (
 			<img
-				src={card.default}
+				src={`/profiles/${coord.data.image}`}
 				alt={coordInfo.name}
 				class={"aspect-square object-cover " + additionalImgStyles}
 			/>
