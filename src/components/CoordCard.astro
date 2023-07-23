@@ -9,11 +9,9 @@ let coordInfo = (coord as CollectionEntry<"coordinators">).data;
 
 // a really convoluted way to I know, but this displays a grade only if the coord is active, and a study only if they have one
 const titles = [
-	...(coord.isActive ? [coord.grade] : []),
-	...(coord.study ? [coord.study] : []),
+	...(coordInfo.isActive ? [coordInfo.grade] : []),
+	...(coordInfo.study ? [coordInfo.study] : []),
 ];
-
-console.log(coord.data.image)
 
 const card = await import(`../content/profiles/${coord.data.image}`);
 
@@ -48,7 +46,7 @@ const iconSizeStyle = isHorizontal ? "w-6" : "w-1/12";
 ---
 
 <div
-	class={"font-lato h-fit block bg-red-50 drop-shadow-xl rounded-md " +
+	class={"font-lato text-gray-700 h-fit block bg-red-50 drop-shadow-xl rounded-md " +
 		additionalCardStyles}
 >
 	{

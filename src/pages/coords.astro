@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import CoordCard from "../components/CoordCard.astro";
 import { getCollection } from "astro:content";
+import type BaseHead from "../components/BaseHead.astro";
 
 const CoordsCollection = await getCollection("coordinators");
 ---
@@ -23,6 +24,35 @@ const CoordsCollection = await getCollection("coordinators");
 					<CoordCard {coord} />
 				))
 			}
+		</div>
+		<div class="font-sans mt-8">
+			<h1 class="text-4xl font-semibold font-lato text-center pb-2">
+				Faculty Advisory
+			</h1>
+			<p class="text-lg text-gray-600 font-light pb-14 text-center">
+				Our faculty advisory is Professor Bart Miller, who can be contacted at
+				bart (at) cs.wisc.edu
+			</p>
+		</div>
+		<div class="mb-8 mx-auto w-1/5">
+			<CoordCard
+				{...{
+					coord: {
+						data: {
+							name: "Bart Miller",
+							study: "Faculty Advisor",
+							image: "bart-miller.jpg",
+							personalLink: "https://www.cs.wisc.edu/~bart/",
+							links: [
+								{
+									name: "Test",
+									url: "https://www.google.com",
+								},
+							],
+						},
+					},
+				}}
+			/>
 		</div>
 	</div>
 </Layout>
