@@ -30,6 +30,8 @@ if (
 		Time: CoordHours[curDate.getHours() - 10].Time,
 	};
 }
+
+const hasCoordColor = curCoordInfo.hasCoord ? "green-500" : "red-700";
 ---
 
 <Layout>
@@ -39,22 +41,17 @@ if (
 			commit to be present at certain office hours. All you need to do is come
 			in and say hi!
 		</p>
-		{
-			curCoordInfo.hasCoord ? (
-				<h5 class="pt-2 text-green-500 font-medium text-center">
-					Current Coord: {curCoordInfo.Coord} ({curCoordInfo.Time})
-				</h5>
-			) : (
-				<h5 class="pt-2 text-red-700 font-medium text-center">
-					No Coord currently scheduled. The UPL is not guaranteed to be open at
-					this time.
-				</h5>
-			)
-		}
+		<h5 class={`pt-2 text-${hasCoordColor} font-medium text-center`}>
+			{
+				curCoordInfo.hasCoord
+					? `Current Coord: ${curCoordInfo.Coord} (${curCoordInfo.Time})`
+					: "No Coord currently scheduled. The UPL is not guaranteed to be open at this time."
+			}
+		</h5>
 	</div>
 	<div class="mt-8">
 		<table
-			class="w-full border-t-8 border-red-500 rounded-t-md border-spacing-0 border-separate"
+			class="w-full border-t-8 border-red-500 rounded-t-md border-spacing-0 border-separate overflow-x-scroll"
 		>
 			<thead class="bg-red-500 font-lato">
 				<tr class="">
@@ -67,7 +64,7 @@ if (
 							"Thursday",
 							"Friday",
 						].map((e: String) => (
-							<th class="text-white text-lg text-left px-4 py-3">
+							<th class="text-white md:text-lg text-sm text-left md:px-4 md:py-3 py-2 px-1">
 								{e.toUpperCase()}
 							</th>
 						))
@@ -86,7 +83,7 @@ if (
 								return (
 									<td
 										class={
-											"text-neutral-600 p-4 px-4 text-start text-lg " +
+											"text-neutral-600 md:p-4 sm:p-1 text-start md:text-lg text-sm " +
 											additionalStyles
 										}
 									>

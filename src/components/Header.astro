@@ -29,13 +29,13 @@ const ROUTES: {
 ];
 ---
 
-<div class="w-9/12 mx-auto text-red-500">
-	<nav class="pt-11 pb-16 flex flex-row justify-center">
+<div class="md:w-9/12 mx-auto text-red-500">
+	<nav class="md:pt-11 md:pb-16 p-2 flex md:flex-row flex-wrap justify-center">
 		<h2 class="text-red-500 text-4xl font-semibold font-lato">
 			<a href="/">Undergraduate Projects Lab</a>
 		</h2>
-		<div class="flex-1" />
-		<div class="flex flex-row items-end space-x-10">
+		<div class="md:flex-1" />
+		<div class="flex flex-row items-end md:space-x-10 space-x-4">
 			{
 				ROUTES.map((e) => (
 					<HeaderLink
