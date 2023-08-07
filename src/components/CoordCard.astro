@@ -13,8 +13,6 @@ const titles = [
 	...(coordInfo.study ? [coordInfo.study] : []),
 ];
 
-// const card = await import(`../content/profiles/${coord.data.image}`);
-
 // dynamically create coordCard links, with a specific icon and href
 const coordLinks = [
 	{
@@ -46,7 +44,7 @@ const iconSizeStyle = isHorizontal ? "w-6" : "w-1/12";
 ---
 
 <div
-	class={"font-lato text-gray-700 h-fit block bg-red-50 drop-shadow-xl rounded-md " +
+	class={"hover:-translate-y-1 hover:scale-110 duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-800/50 shadow-xl font-lato text-gray-700 h-fit block bg-red-50 rounded-md " +
 		additionalCardStyles}
 >
 	{

@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 const DescriptionStyle = {
-	box: "bg-gray-100 flex flex-col md:px-24 px-2 sm:py-10 space-y-2 grow basis-0",
+	box: "bg-gray-100 flex flex-col md:px-16 px-2 sm:py-10 space-y-2 grow basis-0",
 	title: "font-bold text-red-500 text-4xl",
 	description: "text-gray-700",
 };
 
 const QAStyles = {
-	box: "border border-slate-100 shadow-xl rounded-2xl my-6 mx-4 py-8 px-16 inline-block h-fit",
+	box: "border border-slate-100 shadow-xl rounded-2xl my-6 py-8 px-16",
 	header: "mb-2 text-left font-bold text-4xl",
 	answer: "font-sans",
 };
@@ -34,32 +34,34 @@ const QAStyles = {
 			</button>
 		</div>
 	</div>
-	<div class="font-sans mt-20 bg-gray-50 flex flex-row">
-		<div class={DescriptionStyle.box}>
-			<h1 class={DescriptionStyle.title}>Who we are...</h1>
-			<p class={DescriptionStyle.description}>
-				The UPL is a social club. Stop by any time the room is open! Feel free
-				to stop by between classes or as a place to eat your lunch. The UPL
-				Coordinators are happy to answer questions, help you with homework, help
-				you start a project, and more! Or, don't come in with any goal at all!
-				We'd love to meet you.
-			</p>
-		</div>
-		<div class="bg-gray-700 border-l my-8"></div>
-		<div class={DescriptionStyle.box}>
-			<h1 class={DescriptionStyle.title}>Who we are NOT...</h1>
-			<p class={DescriptionStyle.description}>
-				The UPL itself does not do any projects. Rather, people within the lab
-				do projects, and use the space as a way to connect with other UW
-				students. Check out our blog to see what UPL'ers are up to.
-			</p>
+	<div class="bg-gray-100">
+		<div class="mx-auto md:w-11/12 font-sans mt-20 bg-gray-50 flex flex-row">
+			<div class={DescriptionStyle.box}>
+				<h1 class={DescriptionStyle.title}>Who we are...</h1>
+				<p class={DescriptionStyle.description}>
+					The UPL is a social club. Stop by any time the room is open! Feel free
+					to stop by between classes or as a place to eat your lunch. The UPL
+					Coordinators are happy to answer questions, help you with homework,
+					help you start a project, and more! Or, don't come in with any goal at
+					all! We'd love to meet you.
+				</p>
+			</div>
+			<div class="bg-gray-700 border-l my-8"></div>
+			<div class={DescriptionStyle.box}>
+				<h1 class={DescriptionStyle.title}>Who we are NOT...</h1>
+				<p class={DescriptionStyle.description}>
+					The UPL itself does not do any projects. Rather, people within the lab
+					do projects, and use the space as a way to connect with other UW
+					students. Check out our blog to see what UPL'ers are up to.
+				</p>
+			</div>
 		</div>
 	</div>
 	<div class="my-8 text-gray-700">
 		<h1 class="text-center text-4xl font-bold my-8">
 			Frequently Asked Questions
 		</h1>
-		<div class="md:w-11/12 mx-auto md:columns-2">
+		<div class="md:w-11/12 mx-auto grid md:grid-cols-2 gap-8">
 			<div class={QAStyles.box}>
 				<h1 class={QAStyles.header}>Do I need to be a CS major?</h1>
 				<p class={QAStyles.answer}>
