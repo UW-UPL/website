@@ -278,58 +278,9 @@ declare module 'astro:content' {
   collection: "events";
   data: InferEntrySchema<"events">
 } & { render(): Render[".mdx"] };
-"deploying-and-securing-virtualized-self-hosted-servers-michael-grube.mdx": {
-	id: "deploying-and-securing-virtualized-self-hosted-servers-michael-grube.mdx";
-  slug: "deploying-and-securing-virtualized-self-hosted-servers-michael-grube";
-  body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
-} & { render(): Render[".mdx"] };
-"fundamentals-of-ui-design-michael-gira.mdx": {
-	id: "fundamentals-of-ui-design-michael-gira.mdx";
-  slug: "fundamentals-of-ui-design-michael-gira";
-  body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
-} & { render(): Render[".mdx"] };
-"keyboard-matrices-and-debouncing-nick-winans.mdx": {
-	id: "keyboard-matrices-and-debouncing-nick-winans.mdx";
-  slug: "keyboard-matrices-and-debouncing-nick-winans";
-  body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
-} & { render(): Render[".mdx"] };
-"kicad-and-keyboards---a-keynote-nick-winans.mdx": {
-	id: "kicad-and-keyboards---a-keynote-nick-winans.mdx";
-  slug: "kicad-and-keyboards---a-keynote-nick-winans";
-  body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
-} & { render(): Render[".mdx"] };
-"resumes-interviewing-and-internships---everything-you-need-to-know-matt-wildman.mdx": {
-	id: "resumes-interviewing-and-internships---everything-you-need-to-know-matt-wildman.mdx";
-  slug: "resumes-interviewing-and-internships---everything-you-need-to-know-matt-wildman";
-  body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
-} & { render(): Render[".mdx"] };
-"upl-course-night.mdx": {
-	id: "upl-course-night.mdx";
-  slug: "upl-course-night";
-  body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
-} & { render(): Render[".mdx"] };
-"upl-hatathon.mdx": {
-	id: "upl-hatathon.mdx";
-  slug: "upl-hatathon";
-  body: string;
-  collection: "events";
-  data: InferEntrySchema<"events">
-} & { render(): Render[".mdx"] };
-"upl-open-house.mdx": {
-	id: "upl-open-house.mdx";
-  slug: "upl-open-house";
+"madhacks-fall-2023.mdx": {
+	id: "madhacks-fall-2023.mdx";
+  slug: "madhacks-fall-2023";
   body: string;
   collection: "events";
   data: InferEntrySchema<"events">
@@ -342,6 +293,11 @@ declare module 'astro:content' {
 		"coordinators": {
 "ben-lash": {
 	id: "ben-lash";
+  collection: "coordinators";
+  data: InferEntrySchema<"coordinators">
+};
+"ben-wallen": {
+	id: "ben-wallen";
   collection: "coordinators";
   data: InferEntrySchema<"coordinators">
 };
@@ -365,6 +321,11 @@ declare module 'astro:content' {
   collection: "coordinators";
   data: InferEntrySchema<"coordinators">
 };
+"mihir-achyuta": {
+	id: "mihir-achyuta";
+  collection: "coordinators";
+  data: InferEntrySchema<"coordinators">
+};
 "nick-winans": {
 	id: "nick-winans";
   collection: "coordinators";
@@ -377,6 +338,11 @@ declare module 'astro:content' {
 };
 "rudy-banerjee": {
 	id: "rudy-banerjee";
+  collection: "coordinators";
+  data: InferEntrySchema<"coordinators">
+};
+"sam-baumohl": {
+	id: "sam-baumohl";
   collection: "coordinators";
   data: InferEntrySchema<"coordinators">
 };
