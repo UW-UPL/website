@@ -213,13 +213,6 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"first-post.mdx": {
-	id: "first-post.mdx";
-  slug: "first-post";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".mdx"] };
 "hatathon-2022/index.md": {
 	id: "hatathon-2022/index.md";
   slug: "hatathon-2022";
@@ -248,9 +241,9 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"second-post.mdx": {
-	id: "second-post.mdx";
-  slug: "second-post";
+"swe-job-primer.mdx": {
+	id: "swe-job-primer.mdx";
+  slug: "swe-job-primer";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -262,20 +255,6 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"third-post.md": {
-	id: "third-post.md";
-  slug: "third-post";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"using-mdx.mdx": {
-	id: "using-mdx.mdx";
-  slug: "using-mdx";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".mdx"] };
 };
 "events": {
 "a-combinatorial-problem-reed-nelson.mdx": {
@@ -361,6 +340,11 @@ declare module 'astro:content' {
 
 	type DataEntryMap = {
 		"coordinators": {
+"ben-lash": {
+	id: "ben-lash";
+  collection: "coordinators";
+  data: InferEntrySchema<"coordinators">
+};
 "david-teather": {
 	id: "david-teather";
   collection: "coordinators";
@@ -373,6 +357,11 @@ declare module 'astro:content' {
 };
 "michael-gira": {
 	id: "michael-gira";
+  collection: "coordinators";
+  data: InferEntrySchema<"coordinators">
+};
+"michael-noguera": {
+	id: "michael-noguera";
   collection: "coordinators";
   data: InferEntrySchema<"coordinators">
 };

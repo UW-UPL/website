@@ -1,9 +1,8 @@
 {
   "name": "Rudy Banerjee",
   "isActive": true,
-  "grade": "Junior",
+  "grade": "Senior",
   "study": "CE/CS",
   "personalLink": "https://github.com/rudyb2001",
-  "bio": "I am a sophomore at UW Madison studying computer science. I have background in computer vision and other stuff. I have never written a line of JavaScript before, but that may change soon.",
-  "image": "phoenix-kahlo.jpg"
+  "image": "rudy-banerjee.jpg"
 }
